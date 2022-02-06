@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Frontend Mentor | Calculator app</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel='stylesheet' href='style.css'/>
+  <script src="Trycalc.js" defer></script>
+</head>
+
+
+
+   
+<body>
+  <div class="case">
+  <header>
+    <h1>calc</h1>
+  
+    <div class="toggle-container">
+      <div class="toggle-title">
+        <p>THEME</p>
+      </div>
+  
+      <div class="toggle">
+  
+        <div class="toggle-label-container">
+          <label for="toggle-theme1">1</label>
+          <label for="toggle-theme2">2</label>
+          <label for="toggle-theme3">3</label>
+        </div>
+  
+        <div class="toggle-theme">
+          <input type="radio" id="toggle-theme1" name="toggle" value="1" checked="checked">
+          <input type="radio" id="toggle-theme2" name="toggle" value="2">
+          <input type="radio" id="toggle-theme3" name="toggle" value="3">
+        </div>
+  
+      </div>
+    </div>
+  </header>
+
+  <div class="screen">
+    <p id="screenValue">0</p>
+  </div>
+
+  <div class="keypad">
+    <div class="keypad-num">
+      <button type="button" class="key num" data-value="7" onclick="clickNumber(7)">7</button>
+      <button type="button" class="key num" data-value="8" onclick="clickNumber(8)">8</button>
+      <button type="button" class="key num" data-value="9" onclick="clickNumber(9)">9</button>
+      <button type="button" class="key fn" data-value="backspace" onclick="del()">DEL</button>
+      <button type="button" class="key num" data-value="4" onclick="clickNumber(4)">4</button>
+      <button type="button" class="key num" data-value="5" onclick="clickNumber(5)">5</button>
+      <button type="button" class="key num" data-value="6" onclick="clickNumber(6)">6</button>
+      <button type="button" class="key op" data-value="+" onclick="operation('+')">+</button>
+      <button type="button" class="key num" data-value="1" onclick="clickNumber(1)">1</button>
+      <button type="button" class="key num" data-value="2" onclick="clickNumber(2)">2</button>
+      <button type="button" class="key num" data-value="3" onclick="clickNumber(3)">3</button>
+      <button type="button" class="key op" data-value="-" onclick="operation('-')">-</button>
+      <button type="button" class="key decimal" data-value=".">.</button>
+      <button type="button" class="key num" data-value="0" onclick="clickNumber(0)">0</button>
+      <button type="button" class="key op" data-value="/" onclick="operation('/')">/</button>
+      <button type="button" class="key op" data-value="*" onclick="operation('*')">x</button>
+    </div>
+
+    <div class="keypad-base">
+      <button type="button" class="key fn" data-value="reset" onclick="reset()">RESET</button>
+      <button type="button" class="key op" data-value="=" onclick="equals()">=</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
