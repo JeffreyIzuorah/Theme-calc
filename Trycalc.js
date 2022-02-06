@@ -42,15 +42,9 @@ function reset() {
     operand = null;
 }
 
-function del() {
-    if (num1.length > 0 || num2.length > 0) {
-        screenValue.innerHTML = screenValue.innerHTML.slice(0, -1);
-    }
-    else {
-    }
-
-
-
+function del() {   
+        screenValue.innerHTML = num1.slice(0, -1);
+        num1 = screenValue.innerHTML;   
 }
 
 //-------------------------------------------------------------------------------------
