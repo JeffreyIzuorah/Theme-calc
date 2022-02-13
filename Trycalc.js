@@ -42,10 +42,24 @@ function reset() {
     operand = null;
 }
 
-function del() {   
-        screenValue.innerHTML = num1.slice(0, -1);
-        num1 = screenValue.innerHTML;   
+// function del() {   
+//         screenValue.innerHTML = num1.slice(0, -1);
+//         num1 = screenValue.innerHTML;   
+// }
+
+function del() {
+    if (num2 !== 0) {
+        num2 = num2.slice(0, -1);
+        screenValue.innerHTML = Number (num2) || 0;
+        return;
+    }
+    if (num1 !== 0) {
+        num1 = num1.slice(0, -1);
+        screenValue.innerHTML = Number (num1) || 0;
+    }
 }
+
+
 
 //-------------------------------------------------------------------------------------
 function operate(numb1, numb2, operator) {
@@ -78,3 +92,29 @@ function multiply(numb1, numb2) {
 function divide(numb1, numb2) {
     return numb1 / numb2;
 }
+
+//---------------------------------------------------------
+
+
+
+function switchTheme(Number) {
+    document.querySelector('body').classList;
+    if (Number === 1) {
+        document.querySelector('body').classList.remove("theme2", "theme3");
+        document.querySelector('body').classList.add("theme1");
+    } else if (Number === 2) {
+        document.querySelector('body').classList.remove("theme1", "theme3");
+        document.querySelector('body').classList.add("theme2");
+    } else if (Number === 3) {
+        document.querySelector('body').classList.remove("theme1","theme2");
+        document.querySelector('body').classList.add("theme3");
+
+
+}
+}
+
+  
+    
+    
+
+
