@@ -3,8 +3,11 @@ html {
 }
 
 body {
-   background-color:hsl(222, 26%, 31%);
-   color: white;
+   background-color:var(--color-main-background);
+   color: var(--color-text-1);
+   overflow: hidden;
+   margin: auto;
+   touch-action: manipulation;
 }
 
 .case {
@@ -17,8 +20,63 @@ body {
     gap: 1.4rem; 
 }
 
+
+.theme1 {
+  --color-main-background: hsl(222, 26%, 31%); 
+  --color-toggle-background: hsl(223, 31%, 20%);
+  --color-keypad-background: hsl(223, 31%, 20%);
+  --color-screen-background: hsl(224, 36%, 15%);
+  --color-key-background1: hsl(30, 25%, 89%);
+  --color-key-shadow1: hsl(28, 16%, 65%);
+  --color-key-background2: hsl(225, 21%, 49%);
+  --color-key-shadow2: hsl(224, 28%, 35%); 
+  --color-key-background3: hsl(6, 63%, 50%);
+  --color-key-shadow3: hsl(6, 70%, 34%);
+  --color-toggle: hsl(6, 63%, 50%);
+  --color-text-1: hsl(0, 0%, 100%); 
+  --color-text-2: hsl(221, 14%, 31%);
+  --color-text-3: hsl(0, 0%, 100%); 
+  --color-text-4: hsl(0, 0%, 100%);
+}
+
+.theme2 {
+  --color-main-background: hsl(0, 0%, 90%); 
+  --color-toggle-background: hsl(0, 5%, 81%);
+  --color-keypad-background: hsl(0, 5%, 81%);
+  --color-screen-background: hsl(0, 0%, 93%);
+  --color-key-background1: hsl(45, 7%, 89%);
+  --color-key-shadow1: hsl(35, 11%, 61%);
+  --color-key-background2: hsl(185, 42%, 37%);
+  --color-key-shadow2: hsl(185, 58%, 25%);
+  --color-key-background3: hsl(25, 98%, 40%);
+  --color-key-shadow3: hsl(25, 99%, 27%); 
+  --color-toggle: hsl(25, 98%, 40%);
+  --color-text-1: hsl(60, 10%, 19%); 
+  --color-text-2: hsl(60, 10%, 19%);
+  --color-text-3: hsl(0, 0%, 100%); 
+  --color-text-4: hsl(0, 0%, 100%); 
+}
+
+.theme3 {
+  --color-main-background: hsl(268, 75%, 9%); 
+  --color-toggle-background: hsl(268, 71%, 12%);
+  --color-keypad-background: hsl(268, 71%, 12%);
+  --color-screen-background: hsl(268, 71%, 12%);
+  --color-key-background1: hsl(281, 89%, 26%);
+  --color-key-shadow1: hsl(285, 91%, 52%);
+  --color-key-background2: hsl(268, 47%, 21%);
+  --color-key-shadow2: hsl(290, 70%, 36%); 
+  --color-key-background3: hsl(176, 100%, 44%);
+  --color-key-shadow3: hsl(177, 92%, 70%);
+  --color-toggle: hsl(176, 100%, 44%);
+  --color-text-1: hsl(52, 100%, 62%);  
+  --color-text-2: hsl(52, 100%, 62%);
+  --color-text-3: hsl(0, 0%, 100%);
+  --color-text-4: hsl(198, 20%, 13%);
+}
+
+
 header {
-    /* margin-top: auto;  */
     padding-top: 0.5rem;
     display: flex; 
     justify-content: space-between;
@@ -50,27 +108,27 @@ header {
     padding-block: 0.3rem;
 }
 
-.toggle-theme {
-    background-color: hsl(223, 31%, 20%);
+.toggle-tw {
+    background-color: var(--color-toggle-background);
     border-radius: 16px;
     display: flex;
 }
 
-.toggle-theme input {
+.toggle-tw input {
     appearance: none;
     width: 1.3em;
     height: 1.3em;
     margin: 0.2em 0.1em;
 }
 
-.toggle-theme input:checked {
+.toggle-tw input:checked {
     border-radius: 20px;
-    box-shadow: inset 1.1em 1.1em hsl(6, 63%, 50%);
+    box-shadow: inset 1.1em 1.1em var(--color-toggle);
 }
 
 .screen {
     font-size: 16px;
-    background-color: hsl(224, 36%, 15%);
+    background-color: var(--color-screen-background);
     border-radius: 10px;
     text-align: right;
     font-size: 16px;
@@ -82,7 +140,7 @@ header {
     border-radius: 10px;
     margin-bottom: auto;
     padding: 0.5em;
-    background-color: hsl(223, 31%, 20%);
+    background-color: var(--color-keypad-background);
 }
 
 .keypad-num {
@@ -96,10 +154,10 @@ header {
 }
 
 .key {
-    background-color: hsl(30, 25%, 89%);
-    color: hsl(221, 14%, 31%);
+    background-color: var(--color-key-background1);
+    color: var(--color-text-2);
     border-radius: 6px;
-    box-shadow:hsl(28, 16%, 65%);
+    box-shadow:0 var(--key-box-shadow-offset-x) var(--color-key-shadow1);
     border: none;
     font-size: 30px;
     font-weight: 700;
@@ -109,65 +167,22 @@ header {
     padding-inline: 0; 
 }
 
-.function {
-    background-color: hsl(225, 21%, 49%);
-    color: white;
+.fn {
+    background-color: var(--color-key-background2);
+    color: var(--color-text-3);
     font-size: 16px;
-    box-shadow: hsl(224, 28%, 35%);
+    box-shadow: 0 var(--key-box-shadow-offset-x) var(--color-key-shadow2);
 }
 
-.op[data-value="="]{
-    background-color: hsl(6, 63%, 50%);
-    color: white;
-    box-shadow: green;
+.op[data-value="="] {
+    background-color: var(--color-key-background3);
+    color: var(--color-text-4);
 }
 
 .key:active {
     transform: translateY(0.1rem);
     box-shadow: 0 var(--key-box-shadow-offset-x-active) var(--color-key-shadow1);
   }
-
-
-/* color --backround-color-1 = black
-
-theme 2 
-color --background-color-1= black
-
-keypad {
-    color = var(--background-color-1)
-} */
-
-/* .theme-1 {
-    --color-main-background: hsl(222, 26%, 31%); 
-    --color-toggle-background: hsl(223, 31%, 20%);
-    --color-keypad-background: hsl(223, 31%, 20%);
-    --color-screen-background: hsl(224, 36%, 15%);
-    --color-key-background1: hsl(30, 25%, 89%);
-}
-
-.theme-2 {
-  --color-main-background: black ;
-  --color-toggle-background: blue;
-  --color-keypad-background: pink;
-  --color-screen-background: purple;
-  --color-key-background1: orange;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
